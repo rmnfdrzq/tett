@@ -176,6 +176,15 @@ function MobileOrderPage({
           <TopRightDecoration />
         </div>
 
+        {/* Нижние декорации — вне центрированного враппера, чтобы left-0/right-0
+            позиционировались от краёв .mobile-content-box, а не от центрального контейнера */}
+        <div className="absolute bottom-0 left-0 pointer-events-none z-0 w-[36vw] max-w-[438px] aspect-[1622/740]">
+          <BottomLeftDecoration />
+        </div>
+        <div className="absolute bottom-0 right-0 pointer-events-none z-0 w-[36vw] max-w-[434px] aspect-[1446/664]">
+          <BottomRightDecoration />
+        </div>
+
         {/* Враппер */}
         <div className="relative z-10 mx-auto max-w-[560px] px-4 pb-16 w-full flex flex-col min-h-full">
           <PageTitle />
@@ -184,13 +193,6 @@ function MobileOrderPage({
             <CheckoutForm mode="mobile" onValuesChange={onCheckoutValuesChange}>
               <CartTable compact />
             </CheckoutForm>
-          </div>
-
-          <div className="absolute bottom-0 left-0 pointer-events-none z-0 w-[36vw] max-w-[438px] aspect-[1622/740]">
-            <BottomLeftDecoration />
-          </div>
-          <div className="absolute bottom-0 right-0 pointer-events-none z-0 w-[36vw] max-w-[434px] aspect-[1446/664]">
-            <BottomRightDecoration />
           </div>
 
           <footer className="font-hand absolute bottom-16 left-0 right-0 z-10 text-center text-base leading-relaxed uppercase flex items-center justify-center gap-6">
