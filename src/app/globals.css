@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
+
+/* ─── Modal open: blur page content behind the modal ─────────────────────── */
+html.modal-open main {
+  filter: blur(6px);
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 

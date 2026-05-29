@@ -15,11 +15,12 @@ export function AddTilesToCartDropdown() {
   const inCart = new Set(cartItems.map((i) => i.id));
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Закрытие по Escape и блокировка скролла страницы при открытом модальном окне. Cleanup при закрытии
+  // Закрытие по Escape, блокировка скролла и blur фона при открытом модальном окне
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.classList.add("modal-open");
 
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") setOpen(false);
@@ -27,6 +28,7 @@ export function AddTilesToCartDropdown() {
     document.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
+      document.documentElement.classList.remove("modal-open");
       document.removeEventListener("keydown", onKey);
     };
   }, [open]);
