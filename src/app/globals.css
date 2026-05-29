@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
 
-/* ─── Modal open: blur page content behind the modal ─────────────────────── */
+/* ─── Модальное окно открыто: размыть содержимое страницы за модальным окном ─────────────────────── */
 html.modal-open main {
   filter: blur(6px);
   pointer-events: none;
@@ -61,7 +61,7 @@ textarea {
   margin-left: 0.2em;
 }
 
-/* Layout classes */
+/* Классы разметки (лейаута) */
 .desktop-order-page {
   display: none;
   @apply min-h-screen w-screen flex-col relative bg-parchment;
@@ -117,7 +117,7 @@ textarea {
   background-image: none;
 }
 
-/* Page title typography */
+/* Типографика заголовка страницы */
 .page-title-desktop {
   display: inline-block;
   transform: scaleY(1.2);
@@ -146,7 +146,7 @@ textarea {
   @apply text-[16px] leading-none uppercase px-0 tracking-[-0.03em];
 }
 
-/* Cart Table classes */
+/* Классы таблицы корзины */
 .cart-table-box {
   @apply bg-paper/65 min-h-[344px] flex flex-col justify-start rounded-md overflow-hidden;
 }
@@ -258,13 +258,13 @@ textarea {
   background: var(--color-paper-muted);
 }
 
-/* Palette tile grid — tiles flow left→right, top→bottom, no stretching */
+/* Сетка плиток палитры — плитки идут слева направо, сверху вниз, без растягивания */
 .palette-tiles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   padding: 8px;
-  align-content: start; /* tiles anchor to the top, no vertical stretching */
+  align-content: start; /* плитки привязаны к верху, без вертикального растягивания */
 }
 
 .palette-tile-wrapper {
@@ -273,7 +273,7 @@ textarea {
 }
 
 
-/* Design Tool classes */
+/* Классы конструктора дизайна (Design Tool) */
 .design-tool-container {
   @apply border-2 border-ink;
   @apply grid aspect-[565/480] w-full max-w-full grid-cols-[385fr_180fr] bg-tab rounded-md overflow-hidden;
@@ -319,7 +319,7 @@ textarea {
   @apply border-b-2 border-ink py-2 text-center text-[18px] leading-none uppercase;
 }
 
-/* Order Summary classes */
+/* Классы сводки заказа (Order Summary) */
 .order-summary-title {
   @apply border-2 border-ink;
   @apply border-b-0 bg-tab w-[190px] text-center py-1.5 text-[18px] leading-none uppercase rounded-t-md font-black tracking-[-0.03em];
@@ -375,7 +375,7 @@ textarea {
   text-align: right;
 }
 
-/* Checkout Form classes */
+/* Классы формы оформления заказа (Checkout Form) */
 .checkout-legend {
   @apply mb-0 rounded-md px-2 py-[3px] text-[16px] leading-none uppercase tracking-[-0.04em] border-2 border-ink bg-tab;
 }
@@ -397,7 +397,7 @@ textarea {
   @apply grid grid-cols-4 border-2 border-ink divide-x-2 divide-ink bg-paper/65;
 }
 
-/* Custom refactored styles to remove arbitrary values from TSX */
+/* Кастомные отрефакторенные стили для удаления произвольных значений из TSX */
 .cart-title {
   font-family: var(--font-hand);
   font-weight: 900;
@@ -591,7 +591,7 @@ th.cart-col-tight-spacing {
   font-size: 11px !important;
 }
 
-/* ─── Cart badge ──────────────────────────────────────────────────────────── */
+/* ─── Бейдж корзины ──────────────────────────────────────────────────────────── */
 
 .cart-badge {
   position: absolute;
@@ -640,9 +640,9 @@ th.cart-col-tight-spacing {
   to   { transform: scale(1);   opacity: 1; }
 }
 
-/* ─── Tile picker modal ───────────────────────────────────────────────────── */
+/* ─── Модальное окно выбора плитки ───────────────────────────────────────────────────── */
 
-/* Backdrop — covers full viewport, blurs everything behind */
+/* Задний фон (Backdrop) — перекрывает весь вьюпорт, размывает все сзади */
 .tile-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -662,7 +662,7 @@ th.cart-col-tight-spacing {
   to   { opacity: 1; }
 }
 
-/* Panel */
+/* Панель */
 .tile-modal-panel {
   position: relative;
   width: min(520px, 100%);
@@ -680,7 +680,7 @@ th.cart-col-tight-spacing {
   to   { transform: translateY(0)    scale(1);    opacity: 1; }
 }
 
-/* Header bar */
+/* Панель заголовка */
 .tile-modal-header {
   display: flex;
   align-items: center;
@@ -716,14 +716,14 @@ th.cart-col-tight-spacing {
 .tile-modal-close:hover  { @apply bg-terracotta text-paper; }
 .tile-modal-close:active { transform: scale(0.9); }
 
-/* Scrollable table area */
+/* Прокручиваемая область таблицы */
 .tile-modal-body {
   overflow-y: auto;
   overflow-x: auto;
   flex: 1;
 }
 
-/* ─── Table (shared between old dropdown & modal) ─────────────────────────── */
+/* ─── Таблица (общая для старого выпадающего списка и модального окна) ─────────────────────────── */
 
 .add-tile-table {
   width: 100%;
@@ -822,7 +822,7 @@ th.cart-col-tight-spacing {
 .add-tile-btn:hover  { @apply bg-teal text-paper; }
 .add-tile-btn:active { transform: scale(0.9); }
 
-/* ─── Cart table tbody scaling under 1200px viewport ─────────────────────── */
+/* ─── Масштабирование tbody таблицы корзины при ширине экрана менее 1200px ─────────────────────── */
 @media (max-width: 1200px) {
   .cart-items-table tbody tr,
   .cart-items-table tbody tr *,

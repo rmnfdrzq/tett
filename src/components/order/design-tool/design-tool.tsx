@@ -69,7 +69,7 @@ export function DesignTool() {
       onDragEnd={handleDragEnd}
     >
       <section className="design-tool-container">
-        {/* VISUALIZE YOUR ORDER */}
+        {/* ВИЗУАЛИЗАЦИЯ ЗАКАЗА */}
         <div className="border-r-2 border-ink bg-transparent flex flex-col h-full">
           <div className="design-tool-header shrink-0">
             <h2 className="design-tool-title">Visualize Your Order:</h2>
@@ -81,7 +81,7 @@ export function DesignTool() {
           </div>
         </div>
 
-        {/* DESIGN PALATE */}
+        {/* ПАЛИТРА ДИЗАЙНА */}
         <DesignPalette />
       </section>
 

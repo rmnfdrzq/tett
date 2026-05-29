@@ -63,8 +63,8 @@ const designToolSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // When a tile is fully removed from the cart, clear every grid cell that
-    // contained that tile so it can't appear in "Visualize Your Order" either.
+    // Когда плитка полностью удаляется из корзины, очищаем каждую ячейку сетки, которая
+    // содержала эту плитку, чтобы она также не отображалась в визуализации заказа.
     builder.addCase(removeItem, (state, action) => {
       const removedId = action.payload;
       state.grid = state.grid.map((id) => (id === removedId ? null : id));
@@ -73,7 +73,7 @@ const designToolSlice = createSlice({
 });
 
 export const { clearCell, moveTile, placeTile, resetGrid, selectTile } = designToolSlice.actions;
-// Re-export DEFAULT_DESIGN_GRID for any consumers that still need it
+// Повторно экспортируем DEFAULT_DESIGN_GRID для других модулей, если это необходимо
 export { DEFAULT_DESIGN_GRID };
 
 export default designToolSlice.reducer;

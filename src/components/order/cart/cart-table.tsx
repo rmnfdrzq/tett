@@ -80,7 +80,13 @@ export function CartTable({ compact = false }: CartTableProps) {
                         </button>
                         <button
                           type="button"
-                          onClick={() => dispatch(decrementQuantity(item.id))}
+                          onClick={() => {
+                            if (item.quantity === 1) {
+                              dispatch(removeItem(item.id));
+                            } else {
+                              dispatch(decrementQuantity(item.id));
+                            }
+                          }}
                           className="ink-border flex items-center justify-center h-5 w-6 text-[13px] font-bold leading-none transition-transform active:scale-95 bg-terracotta text-paper cursor-pointer"
                           aria-label="Remove"
                         >

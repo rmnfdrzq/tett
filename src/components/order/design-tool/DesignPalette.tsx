@@ -14,7 +14,7 @@ export function DesignPalette() {
       aria-label="Design palette"
     >
       <h3 className="design-tool-palette-title flex items-center justify-center h-[42px] shrink-0">
-        Design Palate
+        Design Palette
       </h3>
 
       <div className="palette-scroll overflow-y-auto flex-1">

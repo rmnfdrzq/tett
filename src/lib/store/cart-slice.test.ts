@@ -23,18 +23,18 @@ describe("cart slice", () => {
   });
 
   it("decrements quantity and removes item if it becomes 0", () => {
-    // Initial quantity of tile7 is 50 in INITIAL_CART_ITEMS
+    // Начальное количество плитки tile7 равно 50 в INITIAL_CART_ITEMS
     const initialState = { items: INITIAL_CART_ITEMS };
 
-    // Decrement tile7 (should decrease to 49)
+    // Уменьшаем количество tile7 (должно уменьшиться до 49)
     const decrementedOnce = cartReducer(initialState, decrementQuantity("tile7"));
     expect(decrementedOnce.items.find((item) => item.id === "tile7")?.quantity).toBe(49);
 
-    // Now set quantity of tile7 to 1
+    // Теперь устанавливаем количество tile7 в 1
     const setToOne = cartReducer(decrementedOnce, setQuantity({ id: "tile7", quantity: 1 }));
     expect(setToOne.items.find((item) => item.id === "tile7")?.quantity).toBe(1);
 
-    // Decrement tile7 again (should become 0 and get removed from cart)
+    // Уменьшаем количество tile7 еще раз (должно стать 0 и удалиться из корзины)
     const decrementedToZero = cartReducer(setToOne, decrementQuantity("tile7"));
     expect(decrementedToZero.items.some((item) => item.id === "tile7")).toBe(false);
   });
