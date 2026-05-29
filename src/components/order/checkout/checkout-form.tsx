@@ -171,8 +171,10 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
 
             {/* Apple Pay */}
             <label
-              className={`checkout-pay-card-mobile ${
-                values.paymentMethod === "apple-pay" ? "bg-mustard/20 font-bold" : "hover:bg-cream/40"
+              className={`checkout-pay-card-mobile group ${
+                values.paymentMethod === "apple-pay"
+                  ? "bg-mustard/20 font-bold hover:bg-paper-hover"
+                  : "hover:bg-paper-hover"
               }`}
             >
               <input
@@ -182,7 +184,7 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
                 onChange={() => updateField("paymentMethod", "apple-pay")}
                 className="sr-only"
               />
-              <span className="grid h-5 w-5 rounded-full border-2 border-ink place-items-center bg-paper mb-2">
+              <span className="grid h-5 w-5 rounded-full border-2 border-ink place-items-center bg-paper group-hover:bg-paper-hover mb-2">
                 {values.paymentMethod === "apple-pay" ? <span className="h-2.5 w-2.5 rounded-full bg-ink" /> : null}
               </span>
               <span className="ink-border rounded bg-cream px-1 py-0.5 mb-2"><ApplePayLogo className="h-6 w-10 text-ink" /></span>
@@ -191,8 +193,10 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
 
             {/* Bank Transfer */}
             <label
-              className={`checkout-pay-card-mobile ${
-                values.paymentMethod === "bank-transfer" ? "bg-mustard/20 font-bold" : "hover:bg-cream/40"
+              className={`checkout-pay-card-mobile group ${
+                values.paymentMethod === "bank-transfer"
+                  ? "bg-mustard/20 font-bold hover:bg-paper-hover"
+                  : "hover:bg-paper-hover"
               }`}
             >
               <input
@@ -202,7 +206,7 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
                 onChange={() => updateField("paymentMethod", "bank-transfer")}
                 className="sr-only"
               />
-              <span className="grid h-5 w-5 rounded-full border-2 border-ink place-items-center bg-paper mb-2">
+              <span className="grid h-5 w-5 rounded-full border-2 border-ink place-items-center bg-paper group-hover:bg-paper-hover mb-2">
                 {values.paymentMethod === "bank-transfer" ? <span className="h-2.5 w-2.5 rounded-full bg-ink" /> : null}
               </span>
               <span className="ink-border rounded bg-cream px-1 py-0.5 mb-2"><BankIcon className="h-6 w-7 text-ink" /></span>
@@ -270,7 +274,9 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
             <div className="grid grid-cols-2 gap-3 pt-1">
               <label
                 className={`checkout-pay-card-desktop group ${
-                  values.paymentMethod === "apple-pay" ? "bg-mustard/20 shadow-ink font-bold" : "bg-paper/50 hover:bg-white"
+                  values.paymentMethod === "apple-pay"
+                    ? "bg-mustard/20 shadow-ink font-bold hover:bg-paper-hover"
+                    : "bg-paper/50 hover:bg-paper-hover"
                 }`}
               >
                 <input
@@ -281,7 +287,7 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
                   className="sr-only"
                 />
                 <div className="flex items-center gap-2 w-full h-full">
-                  <span className="grid h-4 w-4 rounded-full border-2 border-ink place-items-center bg-paper group-hover:bg-white shrink-0 relative -translate-y-[5px]">
+                  <span className="grid h-4 w-4 rounded-full border-2 border-ink place-items-center bg-paper group-hover:bg-paper-hover shrink-0 relative -translate-y-[5px]">
                     {values.paymentMethod === "apple-pay" ? <span className="h-2 w-2 rounded-full bg-ink" /> : null}
                   </span>
                   <div className="flex flex-col items-center justify-center flex-1 gap-1">
@@ -293,7 +299,9 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
 
               <label
                 className={`checkout-pay-card-desktop group ${
-                  values.paymentMethod === "bank-transfer" ? "bg-mustard/20 shadow-ink font-bold" : "bg-paper/50 hover:bg-white"
+                  values.paymentMethod === "bank-transfer"
+                    ? "bg-mustard/20 shadow-ink font-bold hover:bg-paper-hover"
+                    : "bg-paper/50 hover:bg-paper-hover"
                 }`}
               >
                 <input
@@ -304,7 +312,7 @@ export function CheckoutForm({ mode, onValuesChange, children }: CheckoutFormPro
                   className="sr-only"
                 />
                 <div className="flex items-center gap-2 w-full h-full">
-                  <span className="grid h-4 w-4 rounded-full border-2 border-ink place-items-center bg-paper group-hover:bg-white shrink-0 relative -translate-y-[5px]">
+                  <span className="grid h-4 w-4 rounded-full border-2 border-ink place-items-center bg-paper group-hover:bg-paper-hover shrink-0 relative -translate-y-[5px]">
                     {values.paymentMethod === "bank-transfer" ? <span className="h-2 w-2 rounded-full bg-ink" /> : null}
                   </span>
                   <div className="flex flex-col items-center justify-center flex-1 gap-1">
