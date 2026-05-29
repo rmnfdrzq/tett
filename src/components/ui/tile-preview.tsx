@@ -13,8 +13,8 @@ const sizeClasses = {
   sm: "h-9 w-9",
   md: "h-14 w-14",
   lg: "h-20 w-20",
-  collection: "w-full max-w-[3rem] aspect-square mx-auto",
-  item: "w-full max-w-[3.5rem] aspect-square mx-auto",
+  collection: "h-12 w-12 mx-auto",
+  item: "h-14 w-14 mx-auto",
 };
 
 export function TilePreview({ tileId, size = "md", label = false }: TilePreviewProps) {
@@ -23,11 +23,11 @@ export function TilePreview({ tileId, size = "md", label = false }: TilePreviewP
 
   return (
     <div className="flex flex-col items-center gap-1">
-      <div className={`${sizeClasses[size]} bg-cream border-2 border-ink overflow-hidden flex items-center justify-center rounded-sm`}>
+      <div className={`${sizeClasses[size]} bg-white border-2 border-ink overflow-hidden rounded-sm`}>
         <TilePatternImage
           src={swatchSrc}
           alt={name}
-          className="h-full w-full object-cover"
+          className="block h-full w-full object-cover"
         />
       </div>
       {label ? (
