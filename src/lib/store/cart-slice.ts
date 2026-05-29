@@ -22,7 +22,10 @@ const cartSlice = createSlice({
     decrementQuantity(state, action: PayloadAction<TileId>) {
       const item = state.items.find((cartItem) => cartItem.id === action.payload);
       if (item) {
-        item.quantity = Math.max(0, item.quantity - 1);
+        item.quantity -= 1;
+        if (item.quantity <= 0) {
+          state.items = state.items.filter((cartItem) => cartItem.id !== action.payload);
+        }
       }
     },
     setQuantity(state, action: PayloadAction<{ id: TileId; quantity: number }>) {
